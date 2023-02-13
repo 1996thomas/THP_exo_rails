@@ -1,0 +1,22 @@
+
+  <h1 class="container my-3">Bienvenue sur The Gossip Project</h1>
+    <h2 class="container my-3">Voici les derniers potins :</h2>
+      <%@gossip.each_slice(3) do |group|%>
+      <div class="container">
+      <div class="row">
+      <%group.each do |gossip| %>
+      <div class="card my-4 container-fluid" style="width:25rem">
+          <div class="card-header row">Gossip</div>
+          <div class="card-body">
+              <h3 class="card-title"><%=gossip.title%></h5>
+              <p class="card-text"><%=gossip.content%></p>
+              <p class="card-text"><small class="text-muted"><%=gossip.created_at.strftime("Créé le %m/%d/%Y")%></small></p>
+              <a href="<%=home_show_path(gossip.id)%>" class="btn btn-primary btn-sm">Voir le gossip</a>
+          </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+    <%end%>
+  </div>
+  

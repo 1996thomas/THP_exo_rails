@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="card my-4 text container" style="width:25rem">
+    <div class="card-header row">Gossip de <%=@user.first_name%>
+      <%@gossip.tags.each do |tag|%>
+        <%=tag.title%>
+        <%end%>
+      </div>
+    <div class="card-body">
+        <h3 class="card-title"><%=@gossip.title%></h5>
+        <p class="card-text"><%=@gossip.content%></p>
+        <p class="card-text"><small class="text-muted"><%=@gossip.created_at.strftime("Créé le %m/%d/%Y")%></small></p>
+        <a href="<%=home_path%>" class="btn btn-primary btn-sm">Retour au gossips</a>
+        <a href="<%=author_show_path(@gossip.user_id)%>" class="btn btn-secondary btn-sm">Regarder le profil de <%=@user.first_name%></a>
+    </div>
+  </div>
+</div>
